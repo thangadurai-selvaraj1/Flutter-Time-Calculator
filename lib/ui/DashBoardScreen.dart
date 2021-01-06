@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:time_calculator/Utils/ApiEndPoints.dart';
 import 'package:time_calculator/Utils/ImagePaths.dart';
+import 'package:time_calculator/Utils/Strings.dart';
 import 'package:time_calculator/model/BaseTimeModel.dart';
 
 class DashBoardScreen extends StatefulWidget {
@@ -19,8 +20,10 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
   @override
   void initState() {
     super.initState();
+
     load = true;
-    getTime("India", ApiEndPoints.india);
+
+    getTime(Strings.india, ApiEndPoints.india);
   }
 
   @override
@@ -46,7 +49,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(20.0))),
                 icon: Icon(Icons.location_on),
-                label: Text("Choose Location"),
+                label: Text(Strings.chooseLocation),
                 onPressed: () {
                   _modalBottomSheetMenu();
                 },
@@ -120,7 +123,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                         Padding(
                           padding: EdgeInsets.all(20.0),
                           child: Text(
-                            "Choose Location",
+                            Strings.chooseLocation,
                             style: TextStyle(fontSize: 20.0),
                           ),
                         ),
@@ -166,16 +169,69 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
 
     list.add(
       BaseTimeModel(
-          location: 'India',
+          location: Strings.india,
           endPoint: ApiEndPoints.india,
           flag: ImagePaths.india),
     );
 
     list.add(
       BaseTimeModel(
-          location: 'Brisbane - Australia',
-          endPoint: 'Australia/Brisbane',
-          flag: ImagePaths.india),
+          location: Strings.australia,
+          endPoint: ApiEndPoints.australia,
+          flag: ImagePaths.australia),
+    );
+
+    list.add(
+      BaseTimeModel(
+          location: Strings.bangkok,
+          endPoint: ApiEndPoints.bangkok,
+          flag: ImagePaths.bangkok),
+    );
+
+    list.add(
+      BaseTimeModel(
+          location: Strings.dubai,
+          endPoint: ApiEndPoints.dubai,
+          flag: ImagePaths.dubai),
+    );
+    list.add(
+      BaseTimeModel(
+          location: Strings.london,
+          endPoint: ApiEndPoints.london,
+          flag: ImagePaths.london),
+    );
+
+    list.add(
+      BaseTimeModel(
+          location: Strings.moscow,
+          endPoint: ApiEndPoints.moscow,
+          flag: ImagePaths.moscow),
+    );
+    list.add(
+      BaseTimeModel(
+          location: Strings.newYork,
+          endPoint: ApiEndPoints.newYork,
+          flag: ImagePaths.newYork),
+    );
+
+    list.add(
+      BaseTimeModel(
+          location: Strings.paris,
+          endPoint: ApiEndPoints.paris,
+          flag: ImagePaths.paris),
+    );
+    list.add(
+      BaseTimeModel(
+          location: Strings.rome,
+          endPoint: ApiEndPoints.rome,
+          flag: ImagePaths.rome),
+    );
+
+    list.add(
+      BaseTimeModel(
+          location: Strings.singapore,
+          endPoint: ApiEndPoints.singapore,
+          flag: ImagePaths.singapore),
     );
 
     return list;
